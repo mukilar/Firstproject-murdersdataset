@@ -6,7 +6,7 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE,echo=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
+knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ## Introduction
@@ -23,14 +23,16 @@ library(tidyverse)
 load("rda/murders.rda")
 
 ```
-##Basic scatterplot
+## Basic Scatterplot
+
 First, we create a scatterplot for total murders versus population size.
 ```{r scatterplot,echo=FALSE}
 murders %>% ggplot(aes(x = population, y =total )) +
   geom_point()+ggtitle("Gun murder data")
 ```
 
-##Adding labels
+## Adding Labels
+
 To the above scatter plot, we add the state abbreviations as labels and use different colors to represent the different regions.
 ```{r,echo=FALSE}
 murders %>% ggplot(aes(population, total, label = abb)) +
@@ -45,7 +47,8 @@ p+scale_x_log10() +scale_y_log10()+ggtitle("Gun murder data")
 
 ```
 
-##Creating a chart for different regions
+## Creating a chart for different regions
+
 Let us compare the gun homicide rates across regions(North Central, Northeast, South, West) of the US.
 ```{r,echo=FALSE}
 murders %>% mutate(rate = total/population*100000) %>%mutate(region = reorder(region,rate))%>%
