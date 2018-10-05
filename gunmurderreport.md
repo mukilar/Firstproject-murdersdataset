@@ -3,8 +3,8 @@ title: "Report on Gun Murders"
 author: "MukilaR"
 date: "5 October 2018"
 output:
-  word_document: default
-  pdf_document: default
+
+  
   html_document: default
 ---
 
