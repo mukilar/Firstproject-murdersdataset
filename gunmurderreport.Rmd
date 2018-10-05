@@ -47,9 +47,9 @@ p+scale_x_log10() +scale_y_log10()+ggtitle("Gun murder data")
 
 ```
 
-## Creating a chart for different regions
+## Murder rate by region
 
-Let us compare the gun homicide rates across regions(North Central, Northeast, South, West) of the US.
+Let us compare the gun homicide rates across 4 regions(North Central, Northeast, South, West) of the US.
 ```{r,echo=FALSE}
 murders %>% mutate(rate = total/population*100000) %>%mutate(region = reorder(region,rate))%>%
   group_by(region) %>%
